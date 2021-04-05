@@ -8,12 +8,29 @@ create table carrera(
 	constraint pk_cc primary key(NRC_C)
 )
 
+insert into carrera values(
+    1,'Ingenieria informatica',3
+)
+
+insert into carrera values(
+    2, 'Arquitectura', 4
+)
+
+
 --Tabla Materia
 create Table materia(
 	id_M int,
 	nombre_M varchar(30),
 	creditos_M float,
 	constraint pk_cm primary key(id_M)
+)
+
+insert into materia values (
+    1,'Bases de datos 1', 8
+)
+
+insert into materia values (
+    2,'Calculo numerico',7
 )
 
 --Tabla Profesor
