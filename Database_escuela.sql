@@ -16,6 +16,14 @@ insert into carrera values(
     2, 'Arquitectura', 4
 )
 
+insert into carrera values(
+	3,'Medicina',5
+)
+
+insert into carrera values (
+	4,'Contaduria',5
+)
+
 
 --Tabla Materia
 create Table materia(
@@ -43,6 +51,11 @@ create Table profesor(
 	constraint pk_cp primary key(id_Prof)
 )
 
+
+insert into profesor values(1,'Happy henry','el cafetal',04248563578,'9:00am')
+insert into profesor values(2,'Liliana lupo','barcelona',04148569548,'7:00am')
+
+
 /* Tabla alumno 
     (con una clave foranea)*/
 
@@ -57,6 +70,9 @@ create Table alumno(
     constraint fk_cC1 foreign key(NRC_C1) references carrera(NRC_C)
 )
 
+insert into alumno values (1,'Diego',20,6,'Masculino',1)
+insert into alumno values (2,'Kamila',18,2,'Femenino',4)
+
 -- Alumno-Profesor
 create Table alumno_profesor(
     id_alumno1 int,
@@ -66,6 +82,11 @@ create Table alumno_profesor(
 
 )
 
+insert into alumno_profesor values (2,1)
+
+
+
+
 -- Alumno-Materia 
 create table alumno_materia(
     id_alumno2 int,
@@ -73,6 +94,8 @@ create table alumno_materia(
     constraint pk_calumno2 foreign key(id_alumno2) references alumno(id_alumno),
     constraint pk_cm1 foreign key(id_M1) references materia(id_M)
 )
+
+insert into alumno_materia values (1,1)
 
 -- Profesor-Materia
 create table profesor_materia(
@@ -82,3 +105,5 @@ create table profesor_materia(
     constraint pk_cid_M2 foreign key(id_M2) references materia(id_M)
 
 )
+
+insert into profesor_materia values (1,2)
