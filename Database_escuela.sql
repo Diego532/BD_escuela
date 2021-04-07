@@ -107,3 +107,16 @@ create table profesor_materia(
 )
 
 insert into profesor_materia values (1,2)
+
+-- mostrar un dato que se encuentre en una relacion pero en una entidad diferente, en este caso el nombre de la carrera
+-- que cursan los alumnos de la tabla de alumno
+
+select nombre_alumno,semestre_alumno,nombre_C from alumno inner join carrera on alumno.NRC_C1 = carrera.NRC_C
+
+--mostrar el profesor que esta dictando la clase 
+select nombre_alumno,semestre_alumno,nombre_C,nombre_prof from alumno inner join carrera on alumno.NRC_C1 = carrera.NRC_C
+inner join alumno_profesor on alumno_profesor.id_alumno1 = alumno.id_alumno 
+inner join profesor on profesor.id_Prof = alumno_profesor.id_Prof1
+
+-- mostrar filtrar las personas que tienen una edad especifica
+select * from alumno where edad_alumno = 18
